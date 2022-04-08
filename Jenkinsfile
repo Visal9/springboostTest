@@ -21,7 +21,9 @@ stages {
     }
 stage('env') {
         // Jenkins provides no environment variable view
+    steps{
         sh 'printenv|sort'
+    }
     }
 
    
