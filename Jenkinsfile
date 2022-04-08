@@ -9,10 +9,10 @@ stages {
            steps {
           echo "this is testing" 
           withCredentials ([
-              usernamePassword(credentialsId:'TEST_CRED', usernameVariable: 'User', passwordVariable: 'PWD')
+              usernamePassword(credentialsId:'TEST_CRED',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
 
           ]) {
-               echo "this is testing $User" 
+               echo "this is testing $USERNAME" 
               
           }
 
