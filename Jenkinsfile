@@ -12,7 +12,7 @@ stages {
               usernamePassword(credentialsId:'TEST_CRED', usernameVariable: 'User', passwordVariable: 'PWD')
 
           ]) {
-               echo "this is testing ${User}" 
+               echo "this is testing ${User} ewewe" 
               
           }
 
