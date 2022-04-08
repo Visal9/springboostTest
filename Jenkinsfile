@@ -1,7 +1,9 @@
 pipeline {
 
 agent any
-
+    environment{
+    Server_Credential = credentials('TEST_CRED')
+    }
 
 stages {
     stage("build"){
@@ -13,7 +15,7 @@ stages {
 
           ]) {
                echo "this is testing $USERNAME" 
-              
+               echo "this is from env variable $Server_Credential_USR"
           }
 
            
