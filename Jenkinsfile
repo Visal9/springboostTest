@@ -6,7 +6,7 @@ agent any
     }
 
 stages {
-    stage("build"){
+    stage("testing"){
         //we can use this for get credential in step level
            steps {
           echo "this is testing" 
@@ -17,6 +17,17 @@ stages {
                echo "this is testing $USERNAME" 
                echo "this is from env variable $Server_Credential_USR"
           }
+
+           
+        }
+    }
+    
+    
+    
+      stage("build"){
+    
+           steps {
+         sh ./mvnw package
 
            
         }
