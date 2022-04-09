@@ -31,7 +31,7 @@ stages {
     
            steps {
                
-         sh './mvnw package'
+         sh 'mvn -B -DskipTests clean package'
 
            
         }
