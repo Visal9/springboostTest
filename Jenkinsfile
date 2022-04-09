@@ -3,6 +3,9 @@ pipeline {
 agent any
     environment{
     Server_Credential = credentials('TEST_CRED')
+    registry = "cloud.canister.io:5000/ima/springboot-test"
+    registryCredential = 'DOCKER_REGISTERY'
+   
     }
     tools { 
         maven 'maven' 
@@ -35,6 +38,16 @@ stages {
 
            
         }
+    }
+    
+    
+    
+    stage('Building image') {
+        steps{
+            script {
+            dockerImage = docker.build imagename
+            }
+       }
     }
 stage('env') {
         // Jenkins provides no environment variable view
