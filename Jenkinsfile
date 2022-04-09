@@ -28,7 +28,7 @@ stages {
     
            steps {
                
-         sh ./mvnw package
+         sh './mvnw package'
 
            
         }
