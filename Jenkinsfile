@@ -4,6 +4,10 @@ agent any
     environment{
     Server_Credential = credentials('TEST_CRED')
     }
+    tools { 
+        maven 'Maven 3.8.5' 
+        jdk 'jdk11' 
+    }
 
 stages {
     stage("testing"){
