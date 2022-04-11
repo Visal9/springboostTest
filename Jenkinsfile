@@ -7,9 +7,10 @@ agent any
     registryCredential = 'DOCKER_REGISTERY'
     dckerImage =''
     }
-    tools { 
-        maven 'maven' 
-    }
+    
+    #tools { 
+     #   maven 'maven' 
+    #}
     
 
 stages {
