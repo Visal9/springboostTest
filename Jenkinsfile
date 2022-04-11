@@ -24,7 +24,6 @@ stages {
                echo "this is testing $USERNAME" 
                echo "this is from env variable $Server_Credential_USR"
           }
-
            
                
         }
