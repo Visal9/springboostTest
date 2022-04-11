@@ -5,7 +5,7 @@ agent any
     Server_Credential = credentials('TEST_CRED')
     registry = "cloud.canister.io:5000/ima/springboot-test"
     registryCredential = 'DOCKER_REGISTERY'
-   
+    dckerImage =
     }
     tools { 
         maven 'maven' 
