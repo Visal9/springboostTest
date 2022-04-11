@@ -1,3 +1,4 @@
+pipeline {
 agent any
     environment{
     Server_Credential = credentials('TEST_CRED')
@@ -58,3 +59,7 @@ post {
     always {
         echo "this execte only fails"
     }
+    success {
+        echo "this execute only if command success"
+    }
+}
