@@ -4,7 +4,7 @@ agent any
     //Server_Credential = credentials('TEST_CRED')
    // registry = "http://us-central1-docker.pkg.dev/poetic-sentinel-343407/springboost"
         registry = "cloud.canister.io:5000/ima/springboot-test"
-    registryCredential = 'GCR_REGISTERY'
+    registryCredential = 'DOCKER_REGISTERY'
     dckerImage =''
     }
     tools { 
