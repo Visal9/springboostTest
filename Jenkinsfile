@@ -8,9 +8,9 @@ agent any
     dckerImage =''
     }
     
-    #tools { 
-     #   maven 'maven' 
-    #}
+    //tools { 
+     //#   maven 'maven' 
+    //#}
     
 
 stages {
