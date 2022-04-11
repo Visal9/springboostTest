@@ -54,7 +54,7 @@ echo "testing"
     stage('Deploy our image') {
 steps{
 script {
-docker.withRegistry( 'https://cloud.canister.io', registryCredential ) {
+docker.withRegistry( 'https://cloud.canister.io:5000', registryCredential ) {
 dockerImage.push()
 }
 }
