@@ -54,15 +54,11 @@ echo "testing"
     stage('Deploy our image') {
 steps{
 script {
-//docker.withRegistry( 'https://cloud.canister.io:5000', registryCredential ) {
-//dockerImage.push()
-    
-    docker.withRegistry('https://eu.gcr.io', 'gcr:[registryCredential]') {
-    app.push("${env.BUILD_NUMBER}")
-    app.push("latest")
-   // }
+docker.withRegistry( 'https://cloud.canister.io:5000', registryCredential ) {
+dockerImage.push()
 }
 }
+  
 }
 }
 stage('env') {
