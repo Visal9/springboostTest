@@ -46,7 +46,7 @@ stages {
     stage('Building image') {
         steps{
             script {
-            dockerImage = docker.build imagename
+            dockerImage = docker.build "test"
             }
        }
     }
