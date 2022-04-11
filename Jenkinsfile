@@ -60,6 +60,7 @@ dockerImage.push()
     docker.withRegistry('https://eu.gcr.io', 'gcr:[registryCredential]') {
     app.push("${env.BUILD_NUMBER}")
     app.push("latest")
+    }
 }
 }
 }
