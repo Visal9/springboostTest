@@ -24,7 +24,7 @@ stages {
            //   sh 'who'
         //  }
 
-echo "testing
+echo "testing"
         }
     }
     
