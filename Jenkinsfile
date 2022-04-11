@@ -1,7 +1,7 @@
 pipeline {
 agent any
     environment{
-    Server_Credential = credentials('TEST_CRED')
+    //Server_Credential = credentials('TEST_CRED')
     registry = "cloud.canister.io:5000/ima/springboot-test"
     registryCredential = 'DOCKER_REGISTERY'
     dckerImage =''
@@ -16,15 +16,15 @@ stages {
         //we can use this for get credential in step level
            steps {
           echo "this is testing" 
-          withCredentials ([
-              usernamePassword(credentialsId:'TEST_CRED',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
-          ]) {
-               echo "this is testing $USERNAME" 
-               echo "this is from env variable $Server_Credential_USR"
-              sh 'who'
-          }
+         // withCredentials ([
+           //   usernamePassword(credentialsId:'TEST_CRED',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
+      //    ]) {
+            //   echo "this is testing $USERNAME" 
+           //    echo "this is from env variable $Server_Credential_USR"
+           //   sh 'who'
+        //  }
 
-
+echo "testing
         }
     }
     
