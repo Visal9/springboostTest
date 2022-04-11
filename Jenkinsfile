@@ -2,8 +2,8 @@ pipeline {
 agent any
     environment{
     //Server_Credential = credentials('TEST_CRED')
-    registry = "cloud.canister.io:5000/ima/springboot-test"
-    registryCredential = 'DOCKER_REGISTERY'
+    registry = "http://us-central1-docker.pkg.dev/poetic-sentinel-343407/springboost"
+    registryCredential = 'GCR_REGISTERY'
     dckerImage =''
     }
     tools { 
@@ -45,7 +45,7 @@ echo "testing"
     stage('Building image') {
         steps{
             script {
-            dockerImage = docker.build registry + ":$BUILD_NUMBER"
+            dockerImage = docker.build registry
             }
        }
     }
@@ -56,6 +56,10 @@ steps{
 script {
 docker.withRegistry( 'https://cloud.canister.io:5000', registryCredential ) {
 dockerImage.push()
+    
+    docker.withRegistry('https://eu.gcr.io', 'gcr:[registryCredential]') {
+    app.push("${env.BUILD_NUMBER}")
+    app.push("latest")
 }
 }
 }
