@@ -45,10 +45,21 @@ echo "testing"
     stage('Building image') {
         steps{
             script {
-            dockerImage = docker.build "test"
+            dockerImage = docker.build registry + ":$BUILD_NUMBER"
             }
        }
     }
+    
+    
+    stage('Deploy our image') {
+steps{
+script {
+docker.withRegistry( '', registryCredential ) {
+dockerImage.push()
+}
+}
+}
+}
 stage('env') {
         // Jenkins provides no environment variable view
     steps{
