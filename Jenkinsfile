@@ -5,7 +5,7 @@ agent any
     registry = "gcr.io"
        tag ="gcr.io/poetic-sentinel-343407/springboost"
     //    registry = "cloud.canister.io:5000/ima/springboot-test"
-    registryCredential = 'My First Project'
+    registryCredential = "GCR"
     dckerImage =''
     }
     tools { 
