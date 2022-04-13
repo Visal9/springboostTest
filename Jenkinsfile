@@ -56,7 +56,7 @@ echo "testing"
     stage('Deploy our image') {
 steps{
 script {
-docker.withRegistry( registry, registryCredential ) {
+docker.withRegistry( registry, 'gcr:[registryCredential]' ) {
 dockerImage.push()
 }
 }
