@@ -2,7 +2,7 @@ pipeline {
 agent any
     environment{
     //Server_Credential = credentials('TEST_CRED')
-    registry = "http://us-central1-docker.pkg.dev/poetic-sentinel-343407/springboost"
+    registry = "us-central1-docker.pkg.dev/poetic-sentinel-343407/springboot-test/quickstart-image"
     //    registry = "cloud.canister.io:5000/ima/springboot-test"
     registryCredential = 'GCR'
     dckerImage =''
