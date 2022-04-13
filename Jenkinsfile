@@ -56,8 +56,9 @@ echo "testing"
     stage('Deploy our image') {
 steps{
 script {
-    docker.withRegistry( registry, 'gcr:[MY First PRoject]' ) {
-dockerImage.push()
+    docker.withRegistry( registry, 'gcr:MY First PRoject' ) {
+app.push("${env.BUILD_NUMBER}")
+    app.push("latest")
 }
 }
   
