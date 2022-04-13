@@ -2,7 +2,8 @@ pipeline {
 agent any
     environment{
     //Server_Credential = credentials('TEST_CRED')
-    registry = "us-central1-docker.pkg.dev/poetic-sentinel-343407/springboot-test/quickstart-image"
+    registry = "gcr.io"
+       tag ="gcr.io/poetic-sentinel-343407/springboost"
     //    registry = "cloud.canister.io:5000/ima/springboot-test"
     registryCredential = 'My First Project'
     dckerImage =''
@@ -46,7 +47,7 @@ echo "testing"
     stage('Building image') {
         steps{
             script {
-            dockerImage = docker.build registry
+            dockerImage = docker.build tag
             }
        }
     }
@@ -55,7 +56,7 @@ echo "testing"
     stage('Deploy our image') {
 steps{
 script {
-docker.withRegistry( 'https://cloud.canister.io:5000', registryCredential ) {
+docker.withRegistry( registry, registryCredential ) {
 dockerImage.push()
 }
 }
