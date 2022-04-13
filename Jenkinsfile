@@ -36,7 +36,7 @@ echo "testing"
     
            steps {
                
-         sh 'mvn clean package -nohttp-checkstyle-validation'
+         sh 'mvn clean package --nohttp-checkstyle-validation'
            
         }
     }
