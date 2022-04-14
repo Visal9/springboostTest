@@ -59,8 +59,8 @@ echo "testing"
 steps{
 script {
     docker.withRegistry('https://cloud.canister.io:5000', registryCredential ) {
-app.push("${env.BUILD_NUMBER}")
-    app.push("latest")
+dockerImage.push()
+  
 }
 }
   
