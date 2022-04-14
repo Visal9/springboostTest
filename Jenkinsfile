@@ -3,9 +3,9 @@ agent any
     environment{
     //Server_Credential = credentials('TEST_CRED')
     registry = "gcr.io"
-       tag ="gcr.io/poetic-sentinel-343407/springboost"
-    //    registry = "cloud.canister.io:5000/ima/springboot-test"
-    registryCredential = "MY First PRoject"
+      // tag ="gcr.io/poetic-sentinel-343407/springboost"
+        registry = "cloud.canister.io:5000/ima/springboot-test"
+    registryCredential = "DOCKER_REGISTERY"
     dckerImage =''
     }
     tools { 
@@ -62,7 +62,7 @@ echo "testing"
     stage('Deploy our image') {
 steps{
 script {
-    docker.withRegistry( registry, 'gcr:jenkins_test' ) {
+    docker.withRegistry( 'cloud.canister.io:5000', registryCredential ) {
 app.push("${env.BUILD_NUMBER}")
     app.push("latest")
 }
