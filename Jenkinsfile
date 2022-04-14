@@ -17,10 +17,6 @@ stages {
     stage("testing"){
         //we can use this for get credential in step level
            steps {
-               
-               withCredentials([file(credentialsId: 'jenkins_test', variable: 'GC_KEY')]){
-                   echo GC_KEY
-               }
           echo "this is testing" 
          // withCredentials ([
            //   usernamePassword(credentialsId:'TEST_CRED',usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
