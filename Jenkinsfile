@@ -2,7 +2,7 @@ pipeline {
 agent any
     environment{
     //Server_Credential = credentials('TEST_CRED')
-    registry = "gcr.io"
+    //registry = "gcr.io"
       // tag ="gcr.io/poetic-sentinel-343407/springboost"
         registry = "cloud.canister.io:5000/ima/springboot-test"
     registryCredential = "DOCKER_REGISTERY"
@@ -51,7 +51,7 @@ echo "testing"
     stage('Building image') {
         steps{
             script {
-            dockerImage = docker.build tag
+            dockerImage = docker.build registry
                 
                 
             }
